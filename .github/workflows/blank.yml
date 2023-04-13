@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: set up env var
-        run: echo "TAG=example" >> $GITHUB_ENV
+        run: echo "PARSED_BRANCH_NAME=ruanderson vieria" >> $GITHUB_ENV
       - name: use env var
-        run: echo ${{ env.TAG }}
+        run: echo ${{ env.PARSED_BRANCH_NAME }}
