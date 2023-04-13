@@ -10,9 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run a one-line script
-        run: export GITHUB_BRANCH_NAME=${SHORT_BRANCH_NAME}
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to "${GITHUB_BRANCH_NAME}",
-          echo test, and deploy your project.
+      - name: set up env var
+        run: echo "TAG=example" >> $GITHUB_ENV
+      - name: use env var
+        run: echo ${{ env.TAG }}
